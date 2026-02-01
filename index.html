@@ -2,27 +2,110 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sucukulus Games</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <style>
-        body { 
-            background-color: #1a1a1a; 
-            color: white; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center; 
-            height: 100vh; 
-            margin: 0; 
+        /* Logodaki sarı rengi ve sucuk kırmızısını buraya tanımladım */
+        :root {
+            --sucuk-sari: #ffeb00; /* Logodaki arka plan rengi */
+            --sucuk-kirmizi: #b33a1b; /* Sucuğun içi rengi */
         }
-        h1 { font-size: 3rem; margin-bottom: 10px; color: #ffcc00; }
-        p { font-size: 1.2rem; opacity: 0.8; }
-        .game-title { font-style: italic; color: #00ffcc; }
+
+        body {
+            background-color: var(--sucuk-sari);
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--sucuk-kirmizi);
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .logo {
+            width: 80px;
+            height: auto;
+        }
+
+        .brand-name {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-btn {
+            background-color: var(--sucuk-kirmizi);
+            color: var(--sucuk-sari);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .nav-btn:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        #games-section {
+            display: none; /* Başlangıçta gizli */
+        }
+
+        h2 { font-size: 2rem; }
     </style>
 </head>
 <body>
-    <h1>Sucukulus Games</h1>
-    <p>İlk projemiz <span class="game-title">"Approved from me!"</span> çok yakında burada.</p>
-    <p>Hazırlanıyoruz...</p>
+
+<header>
+    <img src="logo.png" alt="Sucukulus Logo" class="logo">
+    <h1 class="brand-name">Sucukulus</h1>
+    <nav>
+        <a href="#" class="nav-btn" onclick="showSection('home')">Ana Sayfa</a>
+        <a href="#" class="nav-btn" onclick="showSection('games')">Oyunlarımız</a>
+    </nav>
+</header>
+
+<main class="content">
+    <div id="home-section">
+        <h2>Hoş Geldiniz!</h2>
+        <p>Geleceğin en "etli" oyunları burada pişiyor.</p>
+        <p>Şu an üzerinde çalıştığımız <strong>"Approved from me!"</strong> projesiyle oyun dünyasını mühürlemeye geliyoruz.</p>
+    </div>
+
+    <div id="games-section">
+        <h2>Oyunlarımız</h2>
+        <p>Pek yakında yeni oyunumuz burada görünecek...</p>
+        <div style="border: 2px dashed var(--sucuk-kirmizi); padding: 20px; margin-top: 20px;">
+            <h3>[ Proje: Approved from me! ]</h3>
+            <p>Durum: Geliştirme aşamasında</p>
+        </div>
+    </div>
+</main>
+
+<script>
+    function showSection(section) {
+        document.getElementById('home-section').style.display = (section === 'home') ? 'block' : 'none';
+        document.getElementById('games-section').style.display = (section === 'games') ? 'block' : 'none';
+    }
+</script>
+
 </body>
 </html>
