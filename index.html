@@ -6,36 +6,39 @@
     <title>Sucukulus Games</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
-        /* Logodaki sarı rengi ve sucuk kırmızısını buraya tanımladım */
         :root {
-            --sucuk-sari: #ffeb00; /* Logodaki arka plan rengi */
-            --sucuk-kirmizi: #b33a1b; /* Sucuğun içi rengi */
+            --sucuk-sari: #fff200; /* İstediğin yeni sarı */
+            --sucuk-turuncu: #d55114; /* İstediğin yeni yazı rengi */
         }
 
         body {
             background-color: var(--sucuk-sari);
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--sucuk-kirmizi);
+            color: var(--sucuk-turuncu);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
         }
 
         header {
             display: flex;
             align-items: center;
-            padding: 20px;
+            padding: 20px 40px;
             gap: 20px;
         }
 
         .logo {
-            width: 80px;
+            width: 70px;
             height: auto;
         }
 
         .brand-name {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: bold;
             margin: 0;
             flex-grow: 1;
+            letter-spacing: -1px;
         }
 
         nav {
@@ -44,32 +47,46 @@
         }
 
         .nav-btn {
-            background-color: var(--sucuk-kirmizi);
+            background-color: var(--sucuk-turuncu);
             color: var(--sucuk-sari);
             border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 10px 25px;
+            border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
             text-decoration: none;
-            transition: transform 0.2s;
+            transition: all 0.3s ease;
         }
 
         .nav-btn:hover {
-            transform: scale(1.05);
-            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(213, 81, 20, 0.3);
         }
 
         .content {
-            padding: 50px 20px;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            padding: 20px;
+        }
+
+        #home-section {
+            /* Ana sayfa boş kalsın dediğin için burayı boş bıraktım */
         }
 
         #games-section {
-            display: none; /* Başlangıçta gizli */
+            display: none;
+            max-width: 600px;
         }
 
-        h2 { font-size: 2rem; }
+        .game-card {
+            border: 3px solid var(--sucuk-turuncu);
+            padding: 30px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+        }
     </style>
 </head>
 <body>
@@ -85,17 +102,13 @@
 
 <main class="content">
     <div id="home-section">
-        <h2>Hoş Geldiniz!</h2>
-        <p>Geleceğin en "etli" oyunları burada pişiyor.</p>
-        <p>Şu an üzerinde çalıştığımız <strong>"Approved from me!"</strong> projesiyle oyun dünyasını mühürlemeye geliyoruz.</p>
-    </div>
+        </div>
 
     <div id="games-section">
-        <h2>Oyunlarımız</h2>
-        <p>Pek yakında yeni oyunumuz burada görünecek...</p>
-        <div style="border: 2px dashed var(--sucuk-kirmizi); padding: 20px; margin-top: 20px;">
-            <h3>[ Proje: Approved from me! ]</h3>
-            <p>Durum: Geliştirme aşamasında</p>
+        <div class="game-card">
+            <h2 style="margin-top:0;">Pek Yakında!</h2>
+            <p style="font-size: 1.2rem;">Yeni oyunumuz <strong>"Approved from me!"</strong> burada görünecek.</p>
+            <p>Mühürleri hazırlayın...</p>
         </div>
     </div>
 </main>
